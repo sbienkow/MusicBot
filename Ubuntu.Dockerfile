@@ -31,10 +31,8 @@ COPY ./requirements.txt ./
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the sources
-COPY . ./
-
-# Create volume for mapping the config
-VOLUME /usr/src/musicbot/config
+COPY ./musicbot ./musicbot
+COPY ./run.py ./run.py
 
 ENV APP_ENV=docker
 

@@ -30,10 +30,6 @@ COPY ./requirements.txt ./
 # Install pip dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the sources
-COPY ./musicbot ./musicbot
-COPY ./run.py ./run.py
-
 ENV APP_ENV=docker
 
 ENTRYPOINT ["python3", "run.py"]
